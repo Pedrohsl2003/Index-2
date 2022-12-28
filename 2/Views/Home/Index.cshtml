@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+            box-shadow: 1px 1px 5px #ffffff;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 5px;
+            font-family: sans-serif;
+        }
+
+        .button {
+            border-radius: 30px;
+            width: 30%;
+            padding: 2px;
+        }
+    </style>
+    <form>
+        <center>
+            <h2>Cadastro</h2><br />
+            <input type="text" name="nome" id="nome" placeholder="Coloque o seu Nome" required /><br /><br />
+            <input type="email" name="email" id="email" placeholder="Coloque o seu e-mail" required /><br /><br />
+            <input type="tel" name="telefone" id="telefone" placeholder="DD 9999-9999" required /><br /><br />
+            <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento" required /><br /><br />
+            <input type="password" name="senha" id="senha" placeholder="Coloque a sua senha" required /><br /><br />
+            <input class="button" type="button" value="Cadastrar" onclick="checar()" />
+        </center>
+    </form>
+    <script>
+        function checar() {
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var telefone = document.getElementById("telefone").value;
+            var nascimento = document.getElementById("nascimento").value;
+            var senha = document.getElementById("senha").value;
+
+            checarValor(nome, "Nome preenchido", "Preencha com o seu nome");
+            checarValor(email, "E-mail preenchido", "Preencha com seu e-mail");
+            checarValor(telefone, "Telefone preenchido", "Preencha com o seu telefone");
+            checarValor(nascimento, "Nascimento preenchido", "Preencha com sua data de nascimento");
+            checarValor(senha, "Senha preenchida", "Preencha com sua senha");
+
+        }
+
+        function checarValor(valor, mensagemSucesso, mensagemErro) {
+            if (valor === "") {
+                alert(mensagemErro);
+            } else {
+                alert(mensagemSucesso);
+            }
+        }
+    </script>
+</body>
+</html>
